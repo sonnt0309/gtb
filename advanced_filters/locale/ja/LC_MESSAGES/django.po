@@ -1,0 +1,168 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-08-31 12:20+0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: advanced_filters/admin.py:23
+msgid "Advanced filters"
+msgstr "カスタムフィルター"
+
+#: advanced_filters/admin.py:46 advanced_filters/admin.py:60
+msgid ""
+"An unexpected error has occurred. Please contact your system administrator. "
+msgstr ""
+
+#: advanced_filters/admin.py:93
+msgid "Advanced filter added successfully."
+msgstr "カスタムフィルターが追加されました。"
+
+#: advanced_filters/forms.py:46
+msgid "Equals"
+msgstr "等しい"
+
+#: advanced_filters/forms.py:47
+msgid "Contains"
+msgstr "含む（文字列）"
+
+#: advanced_filters/forms.py:48
+msgid "Less Than"
+msgstr "値より少ない"
+
+#: advanced_filters/forms.py:49
+msgid "Greater Than"
+msgstr "値より多い"
+
+#: advanced_filters/forms.py:57
+msgid "Field"
+msgstr "項目"
+
+#: advanced_filters/forms.py:59
+msgid "Operator"
+msgstr "比較"
+
+#: advanced_filters/forms.py:63
+msgid "Value"
+msgstr "値"
+
+#: advanced_filters/forms.py:68
+msgid "Negate"
+msgstr "否定"
+
+#: advanced_filters/forms.py:304
+msgid "Error validating filter forms"
+msgstr ""
+
+#: advanced_filters/models.py:17
+#: advanced_filters/templates/admin/advanced_filters.html:14
+msgid "Advanced Filter"
+msgstr "カスタムフィルター"
+
+#: advanced_filters/models.py:18
+msgid "Advanced Filters"
+msgstr "カスタムフィルター"
+
+#: advanced_filters/models.py:20
+msgid "Title"
+msgstr "タイトル"
+
+#: advanced_filters/models.py:24
+msgid "Created by"
+msgstr ""
+
+#: advanced_filters/models.py:27
+#, fuzzy
+#| msgid "Greater Than"
+msgid "Created at"
+msgstr "値より多い"
+
+#: advanced_filters/models.py:28
+msgid "URL"
+msgstr ""
+
+#: advanced_filters/models.py:29
+msgid "Users"
+msgstr ""
+
+#: advanced_filters/models.py:30
+msgid "Groups"
+msgstr ""
+
+#: advanced_filters/templates/admin/advanced_filters.html:21
+msgid "Edit"
+msgstr "修正"
+
+#: advanced_filters/templates/admin/advanced_filters.html:33
+msgid "Create advanced filter"
+msgstr "カスタムフィルターの作成"
+
+#: advanced_filters/templates/admin/advanced_filters.html:71
+msgid "Save"
+msgstr "保存"
+
+#: advanced_filters/templates/admin/advanced_filters.html:72
+#: advanced_filters/templates/admin/advanced_filters/change_form.html:50
+msgid "Save & Filter Now!"
+msgstr "保存してフィルターを適用"
+
+#: advanced_filters/templates/admin/advanced_filters.html:73
+#, fuzzy
+#| msgid "Save & Filter Now!"
+msgid "Filter Now!"
+msgstr "保存してフィルターを適用"
+
+#: advanced_filters/templates/admin/advanced_filters.html:74
+msgid "Cancel"
+msgstr "キャンセル"
+
+#: advanced_filters/templates/admin/advanced_filters/change_form.html:14
+msgid "Change advanced filter"
+msgstr "カスタムフィルターを変更"
+
+#: advanced_filters/templates/admin/common_js_init.html:14
+msgid "Add another filter"
+msgstr "他のフィルターを追加"
+
+#: advanced_filters/templates/admin/common_js_init.html:15
+msgid "Remove"
+msgstr "削除"
+
+#~ msgid "One of"
+#~ msgstr "含む（複数の中の一つ）"
+
+#~ msgid "DateTime Range"
+#~ msgstr "期間"
+
+#~ msgid "Is NULL"
+#~ msgstr "空（NULL）"
+
+#~ msgid "Is TRUE"
+#~ msgstr "真（TRUE）"
+
+#~ msgid "Is FALSE"
+#~ msgstr "偽（FALSE）"
+
+#~ msgid "Less Than or Equal To"
+#~ msgstr "値以下"
+
+#~ msgid "Greater Than or Equal To"
+#~ msgstr "値以上"
+
+#~ msgid "Or (mark an or between blocks)"
+#~ msgstr "OR（各条件をANDではなくORとして処理）"

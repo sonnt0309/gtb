@@ -1,0 +1,308 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-08-31 12:20+0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: apps/admin/postal_code/models.py:9
+msgid "ken id"
+msgstr ""
+
+#: apps/admin/postal_code/models.py:10
+msgid "city id"
+msgstr ""
+
+#: apps/admin/postal_code/models.py:11
+msgid "town id"
+msgstr ""
+
+#: apps/admin/postal_code/models.py:12
+msgid "zip"
+msgstr ""
+
+#: apps/admin/postal_code/models.py:13
+msgid "office flg"
+msgstr ""
+
+#: apps/admin/postal_code/models.py:14
+msgid "delete flg"
+msgstr ""
+
+#: apps/admin/postal_code/models.py:15
+msgid "ken name"
+msgstr ""
+
+#: apps/admin/postal_code/models.py:16
+msgid "ken furi"
+msgstr ""
+
+#: apps/admin/postal_code/models.py:17
+msgid "city name"
+msgstr ""
+
+#: apps/admin/postal_code/models.py:18
+msgid "city furi"
+msgstr ""
+
+#: apps/admin/postal_code/models.py:19
+msgid "town name"
+msgstr ""
+
+#: apps/admin/postal_code/models.py:20
+msgid "town furi"
+msgstr ""
+
+#: apps/admin/postal_code/models.py:21
+msgid "town memo"
+msgstr ""
+
+#: apps/admin/postal_code/models.py:22
+msgid "kyoto street"
+msgstr ""
+
+#: apps/admin/postal_code/models.py:23
+msgid "block name"
+msgstr ""
+
+#: apps/admin/postal_code/models.py:24
+msgid "block furi"
+msgstr ""
+
+#: apps/admin/postal_code/models.py:25
+msgid "memo"
+msgstr ""
+
+#: apps/admin/postal_code/models.py:26
+msgid "office name"
+msgstr ""
+
+#: apps/admin/postal_code/models.py:27
+msgid "office furi"
+msgstr ""
+
+#: apps/admin/postal_code/models.py:28
+msgid "office address"
+msgstr ""
+
+#: apps/admin/postal_code/models.py:29
+msgid "new id"
+msgstr ""
+
+#: apps/admin/postal_code/models.py:30 apps/admin/user/models.py:41
+msgid "is deleted"
+msgstr ""
+
+#: apps/admin/postal_code/models.py:31 apps/admin/user/admin.py:108
+#: apps/admin/user/models.py:74
+msgid "created date"
+msgstr "作成日"
+
+#: apps/admin/postal_code/models.py:32 apps/admin/user/admin.py:109
+#: apps/admin/user/models.py:75
+msgid "updated date"
+msgstr "最終更新日"
+
+#: apps/admin/postal_code/models.py:35 apps/admin/user/models.py:73
+msgid "postal code"
+msgstr "郵便番号"
+
+#: apps/admin/postal_code/models.py:36
+msgid "postal codes"
+msgstr "郵便番号"
+
+#: apps/admin/postal_code/apps.py:7
+msgid "Postal code"
+msgstr "郵便番号"
+
+#: apps/admin/user/models.py:48
+msgid "User"
+msgstr "ユーザー"
+
+#: apps/admin/user/models.py:49
+msgid "Users"
+msgstr "ユーザー"
+
+#: apps/admin/user/admin.py:20
+msgid "This field is required."
+msgstr ""
+
+#: apps/admin/user/admin.py:24
+msgid "This email already used"
+msgstr "このメールは既に使用されています"
+
+#: apps/admin/user/admin.py:34 apps/admin/user/admin.py:45
+msgid "Is not character english, number or @/./+/-/_"
+msgstr "半角英数字記号を入力してください。"
+
+#: apps/admin/user/admin.py:52 apps/admin/user/admin.py:53
+msgid "Profile"
+msgstr "プロフィール"
+
+#: apps/admin/user/admin.py:96 apps/admin/user/admin.py:151
+#: apps/admin/user/models.py:78
+msgid "last name"
+msgstr ""
+
+#: apps/admin/user/admin.py:97 apps/admin/user/admin.py:150
+#: apps/admin/user/models.py:77
+msgid "first name"
+msgstr ""
+
+#: apps/admin/user/admin.py:98 apps/admin/user/admin.py:152
+#: apps/admin/user/models.py:65
+msgid "activation pass"
+msgstr "アクティベート用パスワード"
+
+#: apps/admin/user/admin.py:99 apps/admin/user/admin.py:157
+#: apps/admin/user/models.py:79
+msgid "company"
+msgstr "法人名"
+
+#: apps/admin/user/admin.py:100 apps/admin/user/admin.py:158
+#: apps/admin/user/models.py:80
+msgid "company furigana"
+msgstr "法人名（フリガナ)"
+
+#: apps/admin/user/admin.py:101 apps/admin/user/admin.py:153
+#: apps/admin/user/models.py:68
+msgid "department"
+msgstr "部署"
+
+#: apps/admin/user/admin.py:102 apps/admin/user/admin.py:154
+#: apps/admin/user/models.py:70
+msgid "address"
+msgstr "住所"
+
+#: apps/admin/user/admin.py:103 apps/admin/user/admin.py:155
+#: apps/admin/user/models.py:71
+msgid "address furigana"
+msgstr "住所（フリガナ)"
+
+#: apps/admin/user/admin.py:104 apps/admin/user/admin.py:156
+#: apps/admin/user/models.py:72
+msgid "tel"
+msgstr "電話番号"
+
+#: apps/admin/user/admin.py:114
+msgid "Permissions"
+msgstr ""
+
+#: apps/admin/user/admin.py:115
+msgid "Important dates"
+msgstr ""
+
+#: apps/admin/user/admin.py:149 apps/admin/user/models.py:81
+msgid "full name"
+msgstr "氏名"
+
+#: apps/admin/user/models.py:60 gtb/settings.py:253
+msgid "English"
+msgstr "英語"
+
+#: apps/admin/user/models.py:61
+msgid "Japanese"
+msgstr ""
+
+#: apps/admin/user/models.py:62 gtb/settings.py:255
+msgid "Chinese"
+msgstr "中国語(簡体)"
+
+#: apps/admin/user/models.py:66
+msgid "first name furigana"
+msgstr "名（フリガナ)"
+
+#: apps/admin/user/models.py:67
+msgid "last name furigana"
+msgstr "姓（フリガナ)"
+
+#: apps/admin/user/models.py:69
+msgid "department furigana"
+msgstr "部署（フリガナ)"
+
+#: apps/admin/user/models.py:76
+msgid "locale"
+msgstr "使用言語"
+
+#: apps/admin/user/models.py:82
+msgid "full name furi"
+msgstr "氏名（フリガナ)"
+
+#: gtb/settings.py:254
+msgid "Japan"
+msgstr "日本語"
+
+#: helper/messages.py:3 helper/validate.py:90
+msgid "Postal code not found"
+msgstr "該当する郵便番号はありません。"
+
+#: helper/validate.py:46 helper/validate.py:98
+msgid "Is not character english, number"
+msgstr "半角英数字を入力してください。"
+
+#: helper/validate.py:54 helper/validate.py:59
+msgid "Wrong format. Example: ”aa.bb.cc.dd”"
+msgstr "”aa.bb.cc.dd”の形式で入力してください。"
+
+#: helper/validate.py:67 helper/validate.py:83
+msgid "Is not Furigana"
+msgstr "フリガナを入力してください。"
+
+#: helper/validate.py:75
+msgid "Is not number or -"
+msgstr "半角数字・ハイフンを含めて13文字で入力してください。"
+
+#: oscar_wagtail/abstract_models.py:14
+msgid "Description"
+msgstr ""
+
+#: oscar_wagtail/abstract_models.py:15
+msgid "Name"
+msgstr ""
+
+#: oscar_wagtail/abstract_models.py:16
+msgid "Image"
+msgstr ""
+
+#: oscar_wagtail/models.py:35
+msgid "Products"
+msgstr ""
+
+#: oscar_wagtail/templates/oscar_wagtail/chooser/product_choose.html:2
+#: oscar_wagtail/widgets.py:12
+msgid "Choose a product"
+msgstr ""
+
+#: oscar_wagtail/templates/oscar_wagtail/chooser/product_choose.html:11
+msgid "Search"
+msgstr ""
+
+#: oscar_wagtail/templates/oscar_wagtail/chooser/product_results.html:11
+msgid "Title"
+msgstr ""
+
+#: oscar_wagtail/widgets.py:13
+msgid "Choose another product"
+msgstr ""
+
+#: oscar_wagtail/widgets.py:14
+msgid "Edit this product"
+msgstr ""
+
+#: templates/admin/advanced_filter.html:68
+msgid "Filter Now!"
+msgstr "検索"
+
