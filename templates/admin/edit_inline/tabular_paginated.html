@@ -1,0 +1,23 @@
+{% load i18n suit_list %}
+
+{% include 'admin/edit_inline/tabular.html' %}
+
+{% block after_inline %}
+    <div class="hidden" id="hidLabelRecord">{% trans inline_admin_formset.opts.verbose_name_plural|capfirst %}</div>
+    <div class="suit-tab suit-tab-relations custom-suit-tab">
+        {% with inline_admin_formset.formset.cl as cl %}
+            {% if cl.paginator %}
+                {% pagination cl %}
+            {% endif %}
+        {% endwith %}
+    </div>
+    <script type="text/javascript">
+        $(function () {
+            changeSumaryLabelTabular();
+            if ($('.custom-suit-tab .paginator').children().length === 3 ) {
+                $('.this-page').addClass('padding-right')
+            }
+        });
+    </script>
+
+{% endblock %}

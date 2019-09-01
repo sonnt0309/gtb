@@ -109,17 +109,20 @@ INSTALLED_APPS = [
 
     # 3rd-party django-admin
     'advanced_filters',
+    'suit',
 
     # admin
     'gtb',
     'apps.admin.user',
     'apps.admin.postal_code',
     'apps.admin.option',
+    'apps.admin.license',
 ]
 
 AUTH_USER_MODEL = 'user.User'
 
 LIST_PER_PAGE = 20
+LIST_PER_PAGE_INLINE = 10
 
 SITE_ID = 1
 
