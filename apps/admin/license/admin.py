@@ -11,6 +11,7 @@ from helper.CategoryChoiceField import UserFullnameChoiceField, OptionChoiceFiel
 from apps.admin.user.models import User
 from apps.admin.option.models import Option
 from django.contrib import messages
+from apps.admin.activation.models import Activation
 
 
 # Register your models here.
@@ -25,6 +26,66 @@ class InlineChangeList(object):
         self.paginator = paginator
         self.result_count = paginator.count
         self.params = dict(request.GET.items())
+
+
+class ActivationInline(admin.TabularInline):
+    model = Activation
+    fields = ('get_activate_key',
+              'get_user',
+              'activate_date_time',
+              'pc_name',
+              'windows_product_id',
+              'mac_address',
+              'drive_serial_number',
+              'activate_status_code',
+              )
+    readonly_fields = ('get_activate_key', 'get_user',)
+    verbose_name_plural = _('activation')
+    extra = 0
+
+    def get_user(self, obj):
+        return obj.license.user.profile.full_name_kanji
+
+    def get_activate_key(self, obj):
+        return mark_safe(
+            """<a href='/admin/activation/activation/%s/change'>%s</a>""" % (obj.id, obj.activate_key))
+
+    template = 'admin/edit_inline/tabular_paginated_custom.html'
+    per_page = settings.LIST_PER_PAGE_INLINE
+
+    get_activate_key.short_description = _('Activate ID')
+    get_user.short_description = _('user')
+
+    def get_formset(self, request, obj=None, **kwargs):
+        formset_class = super(ActivationInline, self).get_formset(
+            request, obj, **kwargs)
+
+        class PaginationFormSet(formset_class):
+            def __init__(self, *args, **kwargs):
+                super(PaginationFormSet, self).__init__(*args, **kwargs)
+
+                qs = self.queryset
+                paginator = Paginator(qs, self.per_page)
+                try:
+                    page_num = int(request.GET.get('p', '0'))
+                except ValueError:
+                    page_num = 0
+
+                try:
+                    page = paginator.page(page_num + 1)
+                except (EmptyPage, InvalidPage):
+                    page = paginator.page(paginator.num_pages)
+
+                self.cl = InlineChangeList(request, page_num, paginator)
+                self.paginator = paginator
+
+                if self.cl.show_all:
+                    self._queryset = qs
+                else:
+                    self._queryset = page.object_list
+
+        PaginationFormSet.per_page = self.per_page
+        return PaginationFormSet
 
 
 class LicenseOptionTabular(admin.TabularInline):
@@ -101,7 +162,8 @@ class LicenseOptionTabular(admin.TabularInline):
 
 
 class LicenseAdmin(AdminAdvancedFiltersMixin, admin.ModelAdmin):
-    inlines = (LicenseOptionTabular,)
+    change_form_template = 'admin/custom/change_form_key.html'
+    inlines = (LicenseOptionTabular, ActivationInline)
     list_display = ('license_key', 'get_user', 'get_user_profile_full_name_kanji', 'license_expiration', 'get_product',
                     'get_list_option', 'activate_expiration', 'activation_pass', 'start_app_num', 'pause')
     list_display_links = ('get_user', 'license_key', 'get_product')

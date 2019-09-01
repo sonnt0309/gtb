@@ -10,7 +10,7 @@ from apps.custom_oscar.catalogue.models import Product
 
 # Register your models here.
 class OptionAdmin(AdminAdvancedFiltersMixin, admin.ModelAdmin):
-    # change_form_template = 'admin/custom/change_form_key.html'
+    change_form_template = 'admin/custom/change_form_key.html'
     list_display = ('option_key', 'product', 'option_no', 'option_name',)
     readonly_fields = ('created_date', 'updated_date')
     # hidden fields

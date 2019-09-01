@@ -97,3 +97,11 @@ def validate_activation_pass(value):
             raise ValidationError(
                 _('Is not character english, number'),
             )
+
+
+def validate_activate_status_code(value):
+    for characters in value:
+        if not (isInteger(characters)):
+            raise ValidationError(
+                _('Is not number'),
+            )

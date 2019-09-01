@@ -1,0 +1,180 @@
+{% load i18n %}
+<fieldset class="module aligned {{ fieldset.classes }}">
+    {% if fieldset.name %}<h2>{{ fieldset.name }}</h2>{% endif %}
+    {% if fieldset.description %}
+        <div class="description">{{ fieldset.description|safe }}</div>
+    {% endif %}
+    {% for line in fieldset %}
+        {% for field in line %}
+            {% if field.field.name == 'user' and not perms.license.change_license %}
+                <script>
+                    $(function () {
+                        $(".form-row.field-user").hide();
+                    })
+                </script>
+            {% elif field.field.name == 'custom_user' and perms.license.change_license %}
+                <script>
+                    $(function () {
+                        $(".form-row.field-custom_user").hide();
+                    })
+                </script>
+            {% else %}
+                {% if field.field.name == 'activation' %}
+                    <div class="form-row field-user">
+                        <div style="clear:both">
+                            <label>{% trans 'User' %}</label>
+                            <div id="username_by_activationId" class="readonly">
+                                <a id="username_by_activationId_value"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row field-license-id">
+                        <div style="clear:both">
+                            <label>{% trans 'License ID' %}</label>
+                            <div id="licenseId_by_activationId" class="readonly">
+                                <a id="licenseId_by_activationId_value"></a>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+
+                {% if field.field.name == 'license' %}
+                    <div class="form-row field-username_by_licenseId">
+                        <div style="clear:both">
+                            <label>{% trans 'User' %}:</label>
+                            <div id="username_by_licenseId" class="readonly">
+                                <a id="username_by_licenseId_value"></a>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+
+            <div class="form-row{% if line.fields|length_is:'1' and line.errors %} errors{% endif %}{% if not line.has_visible_field %} hidden{% endif %}{% for field in line %}{% if field.field.name %} field-{{ field.field.name }}{% endif %}{% endfor %}">
+            {% if line.fields|length_is:'1' %}{{ line.errors }}{% endif %}
+            {% for field in line %}
+                <div style="clear:both" {% if not line.fields|length_is:'1' %} class="fieldBox{% if field.field.name %} field-{{ field.field.name }}{% endif %}{% if not field.is_readonly and field.errors %} errors{% endif %}{% if field.field.is_hidden %} hidden{% endif %}"{% elif field.is_checkbox %} class="checkbox-row"{% endif %}>
+                    {% if not line.fields|length_is:'1' and not field.is_readonly %}{{ field.errors }}{% endif %}
+                    {% if field.is_checkbox %}
+                        {% if field.field.name|lower == "pause" %}
+                            {{ field.label_tag }}{{ field.field }}
+                            <style>
+                                .field-pause label{
+                                    width: 170px!important;
+                                    padding: 0 10px 0 0!important;
+                                }
+                            </style>
+                        {% else %}
+                            {{ field.field }}{{ field.label_tag }}
+                        {% endif %}
+                    {% else %}
+                        {% if not 'ID' in field.label_tag and not 'OP' in field.label_tag and not 'OPNO' in field.label_tag and not 'NO' in field.label_tag %}
+                            {{ field.label_tag|title }}
+                        {% else %}
+                            {{ field.label_tag }} 
+                        {% endif %}
+                        {% if field.is_readonly %}
+                            <div class="readonly">{{ field.contents }}</div>
+                            {% if field.field.name == 'license' %}
+                                <script>
+                                    $(function() {
+                                        let licenseId = '{{ field.contents }}';
+                                        getUserNameByLicenseId(licenseId);
+                                    })
+                                </script>
+                            {% endif %}
+                            {% if field.field.name == 'activation' %}
+                                <script>
+                                    $(function () {
+                                        let activationId = '{{ field.contents }}';
+                                        getRelateInfoByActivationKey(activationId);
+                                    })
+                                </script>
+                            {% endif %}
+                        {% else %}
+                            {{ field.field }}
+                            {% if field.field.name == 'license' %}
+                                <script>
+                                    $(function() {
+                                        let licenseId = $("#id_license option:selected").text();
+                                        getUserNameByLicenseId(licenseId);
+                                    })
+                                </script>
+                            {% endif %}
+                            {% if field.field.name == 'license_key' or field.field.name == 'activate_key' or field.field.name == 'app_exe_status_key' or field.field.name == 'option_key' or field.field.name == 'start_app_key'  or field.field.name == 'product_key' or field.field.name == 'operation_setting_key'%}
+                                <span class="generateBtn" onclick="generateNewKey('{{ field.field.name }}')">{% trans 'Generate Key' %}</span>
+                                <script type="text/javascript">
+                                    $(function () {
+                                        if(($("#id_{{ field.field.name }}").val().length == 0 )){
+                                            generateNewKey('{{ field.field.name }}');
+                                        }
+                                    });
+                                    let is_superuser = {{ user.is_superuser|yesno:"true,false" }};
+                                    if(is_superuser){
+                                        $("#id_{{ field.field.name }}").attr('readonly', false);
+                                    }else{
+                                        $("#id_{{ field.field.name }}").attr('readonly', true);
+                                    }
+                                </script>
+                            {% endif %}
+                            {% if field.field.name == 'key' %}
+                                <span class="generateBtn" onclick="generateNewKeyAPi('{{ field.field.name }}')">{% trans 'Generate Key' %}</span>
+                                <script type="text/javascript">
+                                    $(function () {
+                                        if(($("#id_{{ field.field.name }}").val().length == 0 )){
+                                            generateNewKeyAPi('{{ field.field.name }}');
+                                        }
+                                    });
+                                    let is_superuser = {{ user.is_superuser|yesno:"true,false" }};
+                                    if(is_superuser){
+                                        $("#id_{{ field.field.name }}").attr('readonly', false);
+                                    }else{
+                                        $("#id_{{ field.field.name }}").attr('readonly', true);
+                                    }
+                                </script>
+                            {% endif %}
+                        {% endif %}
+                    {% endif %}
+                    {% if field.field.help_text %}
+                        <div class="help">{{ field.field.help_text|safe }}</div>
+                    {% endif %}
+                </div>
+                    {% endfor %}
+                </div>
+                {% if field.field.name == 'activation' %}
+                    <div class="form-row field-user1">
+                        <div style="clear:both">
+                            <label>{% trans 'pc name'|title %}</label>
+                            <div id="pcName_by_activationId" class="readonly"></div>
+                        </div>
+                    </div>
+                    <div class="form-row field-windows-product-id">
+                        <div style="clear:both">
+                            <label>{% trans 'windows product ID'|title %}</label>
+                            <div id="window_product_id_by_activationId" class="readonly"></div>
+                        </div>
+                    </div>
+                    <div class="form-row field-mac-address">
+                        <div style="clear:both">
+                            <label>{% trans 'mac address'|title %}</label>
+                            <div id="mac_address_by_activationId" class="readonly"></div>
+                        </div>
+                    </div>
+                    <div class="form-row field-drive-serial-number">
+                        <div style="clear:both">
+                            <label>{% trans 'drive serial number'|title %}</label>
+                            <div id="drive_serial_by_activationId" class="readonly"></div>
+                        </div>
+                    </div>
+                    {% if not field.is_readonly %}
+                        <script>
+                            $(function () {
+                                let activationKey = $("#id_activation option:selected").text();
+                                getRelateInfoByActivationKey(activationKey);
+                            })
+                        </script>
+                    {% endif %}
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+    {% endfor %}
+</fieldset>

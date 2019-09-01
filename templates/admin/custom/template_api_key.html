@@ -1,0 +1,217 @@
+{% extends "admin/base_site.html" %}
+{% load i18n admin_urls static admin_modify %}
+
+{% block content %}
+    <style>
+        body {
+            font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
+        }
+
+        p {
+            background: #2b2b2b;
+            color: #ffffff;
+            padding: 10px;
+            margin: 0px;
+        }
+
+        label {
+            font-size: 14px;
+        }
+
+        h3 {
+            color: #000000
+        }
+
+        textarea {
+            width: 60%;
+            display: block;
+            min-height: 200px;
+        }
+
+        button {
+            background-color: royalblue;
+            color: #fff;
+            border: none;
+            margin: 10px 0px;
+            border-radius: 3px;
+            padding: 5px 15px;
+            cursor: pointer;
+        }
+
+        .test-block {
+            margin: 20px 0px
+        }
+
+        .test-block {
+            border-style: dotted;
+            border-width: 2px;
+            padding: 20px;
+        }
+
+        #invalid-msg {
+            display: none;
+        }
+
+        #invalid-msg span {
+            color: red;
+        }
+
+        #public_key_block {
+            position: relative;
+        }
+
+        #public_key {
+            padding-right: 100px;
+        }
+
+        #download_key {
+            float: right;
+            position: absolute;
+            right: 5px;
+            top: -5px;
+            background-color: royalblue;
+            color: #fff;
+            border: none;
+            margin: 10px 0px;
+            border-radius: 3px;
+            padding: 5px 15px;
+            cursor: pointer;
+        }
+
+        #btn_download_key {
+            text-decoration: none;
+            background-color: royalblue;
+            color: #fff;
+            border: none;
+            margin: 10px 0px;
+            border-radius: 3px;
+            padding: 5px 15px;
+            cursor: pointer;
+        }
+
+        .pwd_gen_key {
+            width: 200px;
+        }
+
+        .label_pwd_gen_key {
+            width: 200px;
+        }
+    @keyframes donut-spin {
+           0% {
+               transform: rotate(0deg);
+           }
+           100% {
+               transform: rotate(360deg);
+           }
+       }
+       .donut {
+           display: inline-block;
+           border: 2px solid rgba(0, 0, 0, 0.1);
+           border-left-color: #fff;
+           border-radius: 50%;
+           width: 5px;
+           height: 5px;
+           animation: donut-spin 1.2s linear infinite;
+       }
+    </style>
+
+    <div class="key-block">
+        <h3>Keys Block</h3>
+
+        <div class="form-group">
+            <div class="label_pwd_gen_key">Password:</div>
+            <input id="password_1" type="password" class="pwd_gen_key" maxlength="10"/>
+        </div>
+
+        <div class="form-group">
+            <div class="label_pwd_gen_key">Password confirm:</div>
+            <input id="password_2" type="password" class="pwd_gen_key" maxlength="10"/>
+        </div>
+        <div id="invalid-msg">
+            <span>Password not match!</span>
+        </div>
+        <button type="button" class="btn" id="generate_key" onclick="generate_key()">Generate keys
+        <span id="loading"></span>
+        </button>
+        <br>
+        <a href="/api/key/linkDown/" id="btn_download_key">Download</a>
+
+{#                <br>#}
+{#                <label>Private key: </label>#}
+{#                <p class="text" id="private_key_value">Private key</p>#}
+{#                <br>#}
+{#                <label>Public key: </label>#}
+{#                <div class="text" id="public_key_block">#}
+{#                    <p id="public_key">Public key</p>#}
+{#                    <a href="" id="download_key" download="public_key.pem">Download</a>#}
+{#                </div>#}
+    </div>
+    <script>
+        function generate_key() {
+            $("#loading").addClass("donut");
+
+            setTimeout(function () {
+                let password_1 = $("#password_1").val();
+                let password_2 = $("#password_2").val();
+                if (password_1 != password_2) {
+                    $("#invalid-msg").show();
+                    $("#loading").removeClass("donut");
+                } else if (password_1 == password_1 && password_1 == "") {
+                    $("#invalid-msg").hide();
+
+                    let confirm_generate_key = confirm("Password doesn't set, do you want to continue?");
+                    if (confirm_generate_key == true) {
+                        confirmOverrideKey(password_1, password_2);
+                    }
+                } else {
+                    $("#invalid-msg").hide();
+                    confirmOverrideKey(password_1, password_2);
+                }
+            }, 100);
+
+        }
+
+        function confirmOverrideKey(pwd1, pwd2) {
+           let confirm_override_msg = confirm("Do you want to override the old keys?");
+           if (confirm_override_msg == true) {
+               {# call ajax render key#}
+               let data = {
+                   "password1": pwd1,
+                   "password2": pwd2,
+               };
+               let csrftoken = getCookie('csrftoken');
+               $.ajaxSetup({
+                   beforeSend: function (xhr, settings) {
+                       if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+                           xhr.setRequestHeader("X-CSRFToken", csrftoken);
+                       }
+                   }
+               });
+               let hostName = window.location.origin;
+               let url = hostName + '/api/key/generate/';
+               $.ajax({
+                   url: url,
+                   type: 'POST',
+                   data: data,
+                   dataType: "json",
+                   success: function (data) {
+                       console.log("data", data);
+                       alert("Generate key success!");
+                   },
+                   error: function (xhr) {
+                       alert("Generate key failed!");
+                   },
+                   async: false
+               });
+               $("#loading").removeClass("donut");
+               let result = "";
+               let private_key = result.private_key;
+               let public_key = result.public_key;
+               console.log("private_key", private_key)
+               console.log("public_key", public_key)
+               {#$("#private_key_value").text(private_key);#}
+               {#$("#public_key").text(public_key);#}
+           }
+       }
+    </script>
+{% endblock %}

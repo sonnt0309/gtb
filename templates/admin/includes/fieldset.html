@@ -1,0 +1,91 @@
+{% load i18n %}
+<fieldset class="module aligned {{ fieldset.classes }}">
+    {% if fieldset.name %}<h2>{{ fieldset.name }}</h2>{% endif %}
+    {% if fieldset.description %}
+        <div class="description">{{ fieldset.description|safe }}</div>
+    {% endif %}
+    {% for line in fieldset %}
+            <div class="form-row{% if line.fields|length_is:'1' and line.errors %} errors{% endif %}{% if not line.has_visible_field %} hidden{% endif %}{% for field in line %}{% if field.field.name %} field-{{ field.field.name }}{% endif %}{% endfor %}">
+                {% if line.fields|length_is:'1' %}{{ line.errors }}{% endif %}
+                {% for field in line %}
+                    <div{% if not line.fields|length_is:'1' %}
+                        class="fieldBox{% if field.field.name %} field-{{ field.field.name }}{% endif %}{% if not field.is_readonly and field.errors %} errors{% endif %}{% if field.field.is_hidden %} hidden{% endif %}"{% elif field.is_checkbox %}
+                        class="checkbox-row"{% endif %}>
+                        {% if not line.fields|length_is:'1' and not field.is_readonly %}{{ field.errors }}{% endif %}
+                        {% if field.is_checkbox %}
+                            {{ field.field }}{{ field.label_tag }}
+                        {% else %}
+                            <input disabled id="manager-multi-lang" value="{% trans 'manager' %}" class="hidden"/>
+                            {{ field.label_tag }}
+                            {% if field.is_readonly %}
+                                <div class="readonly">{{ field.contents }}</div>
+                            {% else %}
+                                {% if field.field.name == 'postal_code' %}
+                                    <div class="postal_code_field__block">
+                                        {{ field.field }}
+                                        <span class="generateBtn"
+                                              onclick="findLocationByZipCode('{{ field.field.auto_id }}')">{% trans 'Find' %}</span>
+                                        <span class="label-postal-code" id="location_{{ field.field.auto_id }}"></span>
+                                        <script type="text/javascript">
+                                            function findLocationByZipCode(zipCodeFieldId) {
+                                                let zipCode = $("#" + zipCodeFieldId).val();
+                                                let isValidZipCode = false;
+                                                let resultData = "";
+                                                let address = '', addressFuri = '';
+                                                let url = `/postal_code/list/${zipCode}`;
+                                                $.ajax({
+                                                    url: '' + url,
+                                                    type: 'get',
+                                                    dataType: 'json',
+                                                    success: function (data) {
+                                                        if (data.result.length > 0) {
+                                                            resultData = data;
+                                                            isValidZipCode = true;
+                                                        }
+                                                    },
+                                                    async: false
+                                                });
+                                                if (!isValidZipCode) {
+                                                    resultData = "{% trans "Postal code not found" %}"
+
+                                                    $("#location_" + zipCodeFieldId).addClass('error');
+                                                    $("#location_" + zipCodeFieldId).show();
+                                                    $("#location_" + zipCodeFieldId).hide().delay(0).fadeIn(400);
+                                                    $("#location_" + zipCodeFieldId).text(resultData);
+                                                } else {
+                                                    address = resultData.result[0].ken_name + " "
+                                                        + resultData.result[0].city_name + " " + resultData.result[0].town_name;
+                                                    addressFuri = resultData.result[0].ken_furi + " "
+                                                        + resultData.result[0].city_furi + " " + resultData.result[0].town_furi;
+                                                    $("#location_" + zipCodeFieldId).removeClass('error')
+                                                    $("#location_" + zipCodeFieldId).hide();
+                                                    $(".field-address_kanji input").val(address);
+                                                    $(".field-address_furi input").val(addressFuri);
+                                                }
+                                            }
+
+                                            $(function () {
+                                                if ( $("#location_" + zipCodeFieldId).length ) {
+                                                    $("#location_" + zipCodeFieldId).hide();
+                                                }
+                                            });
+                                        </script>
+                                    </div>
+                                {% else %}
+                                    {{ field.field }}
+                                {% endif %}
+                                {% if field.field.name == 'email' %}
+                                    <script>
+                                        $(".field-email label").first().addClass("required");
+                                    </script>
+                                {% endif %}
+                            {% endif %}
+                        {% endif %}
+                        {% if field.field.help_text %}
+                            <div class="help">{{ field.field.help_text|safe }}</div>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+    {% endfor %}
+</fieldset>

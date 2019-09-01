@@ -117,6 +117,7 @@ INSTALLED_APPS = [
     'apps.admin.postal_code',
     'apps.admin.option',
     'apps.admin.license',
+    'apps.admin.activation',
 ]
 
 AUTH_USER_MODEL = 'user.User'

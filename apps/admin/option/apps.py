@@ -1,5 +1,7 @@
 from django.apps import AppConfig
+from django.utils.translation import ugettext_lazy as _
 
 
 class OptionConfig(AppConfig):
-    name = 'option'
+    name = 'apps.admin.option'
+    verbose_name = _("Option")
