@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-01 15:14+0700\n"
+"POT-Creation-Date: 2019-09-01 15:13+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,11 +20,11 @@ msgstr ""
 
 #: apps/admin/activation/admin.py:32
 msgid "application execute status"
-msgstr "アプリ実行ステータス"
+msgstr ""
 
 #: apps/admin/activation/admin.py:48 apps/admin/execution_status/models.py:65
 msgid "app exe status ID"
-msgstr "アプリ実行ステータスID"
+msgstr ""
 
 #: apps/admin/activation/admin.py:49 apps/admin/activation/admin.py:92
 #: apps/admin/activation/admin.py:137 apps/admin/execution_status/admin.py:20
@@ -40,14 +40,14 @@ msgstr ""
 #: apps/admin/license/admin.py:235 apps/admin/user/admin.py:249
 #: apps/admin/user/models.py:83
 msgid "full name"
-msgstr "氏名"
+msgstr ""
 
 #: apps/admin/activation/admin.py:94 apps/admin/activation/admin.py:139
 #: apps/admin/execution_status/admin.py:22
 #: apps/admin/execution_status/admin.py:86 apps/admin/license/models.py:43
 #: templates/admin/includes/fieldset_key.html:33
 msgid "License ID"
-msgstr "ライセンス ID"
+msgstr ""
 
 #: apps/admin/activation/admin.py:133 apps/admin/execution_status/admin.py:80
 #: apps/admin/license/admin.py:129 apps/admin/license/admin.py:231
@@ -59,49 +59,49 @@ msgstr ""
 
 #: apps/admin/activation/apps.py:7 templates/admin/edit_inline/tabular.html:10
 msgid "Activation"
-msgstr "アクティベート"
+msgstr ""
 
 #: apps/admin/activation/models.py:42 apps/admin/execution_status/admin.py:23
 #: apps/admin/execution_status/admin.py:87 apps/admin/license/admin.py:56
 msgid "Activate ID"
-msgstr "アクティベートID"
+msgstr ""
 
 #: apps/admin/activation/models.py:43 apps/admin/license/models.py:60
 #: apps/admin/license/models.py:82 apps/admin/user/admin.py:122
 msgid "license"
-msgstr "ライセンス"
+msgstr ""
 
 #: apps/admin/activation/models.py:44
 msgid "activate date"
-msgstr "アクティベート実行日時"
+msgstr ""
 
 #: apps/admin/activation/models.py:45 apps/admin/execution_status/admin.py:24
 #: apps/admin/execution_status/admin.py:88
 #: templates/admin/includes/fieldset_key.html:146
 msgid "pc name"
-msgstr "マシン名"
+msgstr ""
 
 #: apps/admin/activation/models.py:46 apps/admin/execution_status/admin.py:25
 #: apps/admin/execution_status/admin.py:89
 #: templates/admin/includes/fieldset_key.html:152
 msgid "windows product ID"
-msgstr "WindowsプロダクトID"
+msgstr ""
 
 #: apps/admin/activation/models.py:47 apps/admin/execution_status/admin.py:26
 #: apps/admin/execution_status/admin.py:90
 #: templates/admin/includes/fieldset_key.html:158
 msgid "mac address"
-msgstr "MACアドレス"
+msgstr ""
 
 #: apps/admin/activation/models.py:48 apps/admin/execution_status/admin.py:27
 #: apps/admin/execution_status/admin.py:91
 #: templates/admin/includes/fieldset_key.html:164
 msgid "drive serial number"
-msgstr "シリアルナンバー"
+msgstr ""
 
 #: apps/admin/activation/models.py:49
 msgid "activate status code"
-msgstr "アクティベートステータス"
+msgstr ""
 
 #: apps/admin/activation/models.py:50 apps/admin/execution_status/models.py:70
 #: apps/admin/license/models.py:49 apps/admin/license/models.py:84
@@ -109,7 +109,7 @@ msgstr "アクティベートステータス"
 #: apps/admin/postal_code/models.py:30 apps/admin/user/models.py:41
 #: apps/custom_oscar/catalogue/models.py:17
 msgid "is deleted"
-msgstr "削除フラグ"
+msgstr ""
 
 #: apps/admin/activation/models.py:51 apps/admin/execution_status/models.py:71
 #: apps/admin/license/models.py:50 apps/admin/license/models.py:85
@@ -117,7 +117,7 @@ msgstr "削除フラグ"
 #: apps/admin/postal_code/models.py:31 apps/admin/user/admin.py:208
 #: apps/admin/user/models.py:76
 msgid "created date"
-msgstr "作成日"
+msgstr ""
 
 #: apps/admin/activation/models.py:52 apps/admin/execution_status/models.py:72
 #: apps/admin/license/models.py:51 apps/admin/license/models.py:86
@@ -125,160 +125,160 @@ msgstr "作成日"
 #: apps/admin/postal_code/models.py:32 apps/admin/user/admin.py:209
 #: apps/admin/user/models.py:77
 msgid "updated date"
-msgstr "最終更新日"
+msgstr ""
 
 #: apps/admin/activation/models.py:58 apps/admin/execution_status/models.py:62
 #: apps/admin/license/admin.py:43
 msgid "activation"
-msgstr "アクティベート"
+msgstr ""
 
 #: apps/admin/activation/models.py:59
 msgid "activations"
-msgstr "アクティベート"
+msgstr ""
 
 #: apps/admin/execution_status/apps.py:7
 msgid "Execution Status"
-msgstr "アプリ実行ステータス"
+msgstr ""
 
 #: apps/admin/execution_status/models.py:17 helper/validate.py:106
 msgid "Is not number"
-msgstr "半角5桁の数字を入力してください"
+msgstr ""
 
 #: apps/admin/execution_status/models.py:66
 msgid "start app datetime"
-msgstr "アプリ起動日時"
+msgstr ""
 
 #: apps/admin/execution_status/models.py:67
 msgid "status last update"
-msgstr "ステータス最終更新日時"
+msgstr ""
 
 #: apps/admin/execution_status/models.py:68
 msgid "status code"
-msgstr "ステータスコード"
+msgstr ""
 
 #: apps/admin/execution_status/models.py:69
 msgid "exe status expiration"
-msgstr "実行ステータス有効期限"
+msgstr ""
 
 #: apps/admin/execution_status/models.py:78
 #: apps/admin/execution_status/models.py:79
 msgid "execution status"
-msgstr "アプリ実行ステータス"
+msgstr ""
 
 #: apps/admin/license/admin.py:95 apps/admin/license/models.py:93
 msgid "license options"
-msgstr "ライセンスオプション"
+msgstr ""
 
 #: apps/admin/license/admin.py:108 apps/admin/option/models.py:49
 msgid "option no"
-msgstr "OPNo."
+msgstr ""
 
 #: apps/admin/license/admin.py:109 apps/admin/option/models.py:48
 msgid "option id"
-msgstr "オプションID"
+msgstr ""
 
 #: apps/admin/license/admin.py:175 apps/admin/license/admin.py:237
 #: apps/admin/license/models.py:45 apps/admin/operation_setting/admin.py:62
 #: apps/admin/operation_setting/models.py:42 apps/admin/option/models.py:51
 msgid "product"
-msgstr "製品"
+msgstr ""
 
 #: apps/admin/license/admin.py:176 apps/admin/license/admin.py:238
 #: apps/admin/user/admin.py:124
 msgid "OP"
-msgstr "OP"
+msgstr ""
 
 #: apps/admin/license/apps.py:7 apps/admin/user/admin.py:100
 #: templates/admin/edit_inline/tabular.html:9
 msgid "License"
-msgstr "ライセンス"
+msgstr ""
 
 #: apps/admin/license/models.py:46
 msgid "expiration date"
-msgstr "ライセンス終了日"
+msgstr ""
 
 #: apps/admin/license/models.py:47
 msgid "activation date"
-msgstr "ライセンス開始日"
+msgstr ""
 
 #: apps/admin/license/models.py:48 apps/admin/user/admin.py:198
 #: apps/admin/user/admin.py:252 apps/admin/user/models.py:67
 msgid "activation pass"
-msgstr "アクティベート用パスワード"
+msgstr ""
 
 #: apps/admin/license/models.py:52 apps/admin/license/models.py:81
 #: apps/admin/option/models.py:60
 msgid "option"
-msgstr "オプション(OP)"
+msgstr ""
 
 #: apps/admin/license/models.py:53
 msgid "Only input number 0-9"
-msgstr "半角数字を0以上に入力してください。"
+msgstr ""
 
 #: apps/admin/license/models.py:53
 msgid "app start number"
-msgstr "同時起動許可数"
+msgstr ""
 
 #: apps/admin/license/models.py:54
 msgid "pause"
-msgstr "ライセンス"
+msgstr ""
 
 #: apps/admin/license/models.py:61
 msgid "licenses"
-msgstr "ライセンス"
+msgstr ""
 
 #: apps/admin/license/models.py:83
 msgid "purchase date"
-msgstr "購入日"
+msgstr ""
 
 #: apps/admin/license/models.py:92
 msgid "license option"
-msgstr "ライセンスオプション"
+msgstr ""
 
 #: apps/admin/operation_setting/apps.py:7
 msgid "Operation setting"
-msgstr "動作設定"
+msgstr ""
 
 #: apps/admin/operation_setting/models.py:41
 msgid "operation setting ID"
-msgstr "動作設定ID"
+msgstr ""
 
 #: apps/admin/operation_setting/models.py:43
 msgid "check interval seconds"
-msgstr "次回実行ステータス確認"
+msgstr ""
 
 #: apps/admin/operation_setting/models.py:44
 msgid "status valid seconds"
-msgstr "実行ステータス用設定秒数"
+msgstr ""
 
 #: apps/admin/operation_setting/models.py:45
 msgid "latest version"
-msgstr "最新のバージョン"
+msgstr ""
 
 #: apps/admin/operation_setting/models.py:46
 msgid "oldest version"
-msgstr "最古のバージョン"
+msgstr ""
 
 #: apps/admin/operation_setting/models.py:55
 #: apps/admin/operation_setting/models.py:56
 msgid "operation setting"
-msgstr "動作設定"
+msgstr ""
 
 #: apps/admin/option/apps.py:7
 msgid "Option"
-msgstr "オプション(OP)"
+msgstr ""
 
 #: apps/admin/option/models.py:50
 msgid "option name"
-msgstr "OP名"
+msgstr ""
 
 #: apps/admin/option/models.py:61
 msgid "options"
-msgstr "オプション(OP)"
+msgstr ""
 
 #: apps/admin/postal_code/apps.py:7
 msgid "Postal code"
-msgstr "郵便番号"
+msgstr ""
 
 #: apps/admin/postal_code/models.py:9
 msgid "ken id"
@@ -366,11 +366,11 @@ msgstr ""
 
 #: apps/admin/postal_code/models.py:35 apps/admin/user/models.py:75
 msgid "postal code"
-msgstr "郵便番号"
+msgstr ""
 
 #: apps/admin/postal_code/models.py:36
 msgid "postal codes"
-msgstr "郵便番号"
+msgstr ""
 
 #: apps/admin/user/admin.py:28
 msgid "This field is required."
@@ -378,19 +378,19 @@ msgstr ""
 
 #: apps/admin/user/admin.py:32
 msgid "This email already used"
-msgstr "このメールは既に使用されています"
+msgstr ""
 
 #: apps/admin/user/admin.py:42 apps/admin/user/admin.py:53
 msgid "Is not character english, number or @/./+/-/_"
-msgstr "半角英数字記号を入力してください。"
+msgstr ""
 
 #: apps/admin/user/admin.py:60 apps/admin/user/admin.py:61
 msgid "Profile"
-msgstr "プロフィール"
+msgstr ""
 
 #: apps/admin/user/admin.py:123 apps/custom_oscar/catalogue/models.py:14
 msgid "product ID"
-msgstr "製品ID"
+msgstr ""
 
 #: apps/admin/user/admin.py:196 apps/admin/user/admin.py:251
 #: apps/admin/user/models.py:80
@@ -405,32 +405,32 @@ msgstr ""
 #: apps/admin/user/admin.py:199 apps/admin/user/admin.py:257
 #: apps/admin/user/models.py:81
 msgid "company"
-msgstr "法人名"
+msgstr ""
 
 #: apps/admin/user/admin.py:200 apps/admin/user/admin.py:258
 #: apps/admin/user/models.py:82
 msgid "company furigana"
-msgstr "法人名（フリガナ)"
+msgstr ""
 
 #: apps/admin/user/admin.py:201 apps/admin/user/admin.py:253
 #: apps/admin/user/models.py:70
 msgid "department"
-msgstr "部署"
+msgstr ""
 
 #: apps/admin/user/admin.py:202 apps/admin/user/admin.py:254
 #: apps/admin/user/models.py:72
 msgid "address"
-msgstr "住所"
+msgstr ""
 
 #: apps/admin/user/admin.py:203 apps/admin/user/admin.py:255
 #: apps/admin/user/models.py:73
 msgid "address furigana"
-msgstr "住所（フリガナ)"
+msgstr ""
 
 #: apps/admin/user/admin.py:204 apps/admin/user/admin.py:256
 #: apps/admin/user/models.py:74
 msgid "tel"
-msgstr "電話番号"
+msgstr ""
 
 #: apps/admin/user/admin.py:214
 msgid "Permissions"
@@ -438,22 +438,22 @@ msgstr ""
 
 #: apps/admin/user/admin.py:215
 msgid "Important dates"
-msgstr "重要な日程"
+msgstr ""
 
 #: apps/admin/user/models.py:48 templates/admin/includes/fieldset_key.html:25
 #: templates/admin/includes/fieldset_key.html:44
 msgid "User"
-msgstr "ユーザー"
+msgstr ""
 
 #: apps/admin/user/models.py:49
 msgid "Users"
-msgstr "ユーザー"
+msgstr ""
 
 #: apps/admin/user/models.py:62 gtb/settings.py:273
 #: templates/admin/base.html:42
 #: templates/registration/password_change_form.html:9
 msgid "English"
-msgstr "英語"
+msgstr ""
 
 #: apps/admin/user/models.py:63 templates/admin/base.html:43
 #: templates/registration/password_change_form.html:10
@@ -464,27 +464,27 @@ msgstr ""
 #: templates/admin/base.html:44
 #: templates/registration/password_change_form.html:11
 msgid "Chinese"
-msgstr "中国語(簡体)"
+msgstr ""
 
 #: apps/admin/user/models.py:68
 msgid "first name furigana"
-msgstr "名（フリガナ)"
+msgstr ""
 
 #: apps/admin/user/models.py:69
 msgid "last name furigana"
-msgstr "姓（フリガナ)"
+msgstr ""
 
 #: apps/admin/user/models.py:71
 msgid "department furigana"
-msgstr "部署（フリガナ)"
+msgstr ""
 
 #: apps/admin/user/models.py:78
 msgid "locale"
-msgstr "使用言語"
+msgstr ""
 
 #: apps/admin/user/models.py:84
 msgid "full name furi"
-msgstr "氏名（フリガナ)"
+msgstr ""
 
 #: apps/custom_oscar/catalogue/models.py:12
 msgid "Overview"
@@ -492,47 +492,47 @@ msgstr ""
 
 #: apps/custom_oscar/catalogue/models.py:15
 msgid "product no"
-msgstr "製品Ｎｏ．"
+msgstr ""
 
 #: apps/custom_oscar/catalogue/models.py:16
 msgid "product name"
-msgstr "製品名"
+msgstr ""
 
 #: gtb/settings.py:131
 msgid "USER INFORMATION"
-msgstr "ユーザ情報"
+msgstr ""
 
 #: gtb/settings.py:132
 msgid "LICENSE INFORMATION"
-msgstr "ライセンス情報"
+msgstr ""
 
 #: gtb/settings.py:133
 msgid "ACTIVATION INFORMATION"
-msgstr "アクティベート情報"
+msgstr ""
 
 #: gtb/settings.py:134
 msgid "EXECUTION STATUS INFORMATION"
-msgstr "アプリ実行ステータス情報"
+msgstr ""
 
 #: gtb/settings.py:135
 msgid "DB TABLE MANAGEMENT"
-msgstr "ＤＢテーブルの管理"
+msgstr ""
 
 #: gtb/settings.py:274
 msgid "Japan"
-msgstr "日本語"
+msgstr ""
 
 #: gtb/utils.py:23
 msgid "Request includes Wrong content."
-msgstr "リクエストに間違ったコンテンツが含まれています"
+msgstr ""
 
 #: gtb/utils.py:24 gtb/utils.py:52 gtb/utils.py:61
 msgid "Invalid format: "
-msgstr "フォーマットが無効です： "
+msgstr ""
 
 #: gtb/utils.py:27
 msgid "Authentication credentials were not provided."
-msgstr "認証資格情報が提供されませんでした。"
+msgstr ""
 
 #: gtb/utils.py:37
 msgid "The app throw bad request."
@@ -544,11 +544,11 @@ msgstr ""
 
 #: gtb/utils.py:75
 msgid "Request used illegal method."
-msgstr "リクエストが不正な方を使用しました。正しくリクエストを使用してください。"
+msgstr ""
 
 #: gtb/utils.py:76
 msgid "Please use legal method."
-msgstr "合法的な方法を使用してください。"
+msgstr ""
 
 #: gtb/utils.py:79
 msgid "The app used illegal request method."
@@ -557,23 +557,23 @@ msgstr ""
 #: helper/messages.py:3 helper/validate.py:90
 #: templates/admin/includes/fieldset.html:49
 msgid "Postal code not found"
-msgstr "該当する郵便番号はありません。"
+msgstr ""
 
 #: helper/validate.py:46 helper/validate.py:98
 msgid "Is not character english, number"
-msgstr "半角英数字を入力してください。"
+msgstr ""
 
 #: helper/validate.py:54 helper/validate.py:59
 msgid "Wrong format. Example: ”aa.bb.cc.dd”"
-msgstr "”aa.bb.cc.dd”の形式で入力してください。"
+msgstr ""
 
 #: helper/validate.py:67 helper/validate.py:83
 msgid "Is not Furigana"
-msgstr "フリガナを入力してください。"
+msgstr ""
 
 #: helper/validate.py:75
 msgid "Is not number or -"
-msgstr "半角数字・ハイフンを含めて13文字で入力してください。"
+msgstr ""
 
 #: oscar_wagtail/abstract_models.py:14
 msgid "Description"
@@ -680,12 +680,12 @@ msgstr ""
 
 #: templates/admin/includes/fieldset.html:27
 msgid "Find"
-msgstr "住所検索"
+msgstr ""
 
 #: templates/admin/includes/fieldset_key.html:104
 #: templates/admin/includes/fieldset_key.html:120
 msgid "Generate Key"
-msgstr "再発行"
+msgstr ""
 
 #: templates/registration/logged_out.html:8
 msgid "Thanks for spending some quality time with the Web site today."
@@ -730,12 +730,8 @@ msgstr ""
 
 #: templates/registration/password_reset_form.html:22
 msgid "Email address:"
-msgstr "住所"
+msgstr ""
 
 #: templates/registration/password_reset_form.html:25
 msgid "Reset my password"
 msgstr ""
-
-#: templates/admin/advanced_filter.html:68
-msgid "Filter Now!"
-msgstr "検索"
