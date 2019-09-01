@@ -43,4 +43,6 @@ urlpatterns += [
     path('advanced_filters/', include('advanced_filters.urls')),
     # oscar_wagtail
     path('api/oscar_wagtail/', include('oscar_wagtail.urls')),
+    # api
+    path('execution_status/', include('apps.admin.execution_status.urls')),
 ]

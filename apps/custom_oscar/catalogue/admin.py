@@ -4,6 +4,7 @@ from .models import Product
 
 
 class ProductAdmin(admin.ModelAdmin):
+    change_form_template = 'admin/custom/change_form_key.html'
     date_hierarchy = 'date_created'
     list_display = ('get_title', 'upc', 'get_product_class', 'structure',
                     'attribute_summary', 'date_created')

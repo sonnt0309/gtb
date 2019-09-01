@@ -118,6 +118,7 @@ INSTALLED_APPS = [
     'apps.admin.option',
     'apps.admin.license',
     'apps.admin.activation',
+    'apps.admin.execution_status',
 ]
 
 AUTH_USER_MODEL = 'user.User'
