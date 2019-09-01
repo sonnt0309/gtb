@@ -110,6 +110,7 @@ INSTALLED_APPS = [
     # 3rd-party django-admin
     'advanced_filters',
     'suit',
+    'admin_reorder',
 
     # admin
     'gtb',
@@ -119,6 +120,7 @@ INSTALLED_APPS = [
     'apps.admin.license',
     'apps.admin.activation',
     'apps.admin.execution_status',
+    'apps.admin.operation_setting',
 ]
 
 AUTH_USER_MODEL = 'user.User'
