@@ -1,0 +1,368 @@
+.dashboard #content {
+    width: 70%;
+}
+
+#content h1 {
+    padding-left: 10px;
+}
+
+.card {
+    margin: 10px;
+    border-radius: 1.25rem;
+}
+
+.addlink {
+    margin-right: 20px;
+}
+
+#header {
+    overflow: visible;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #5a6268;
+    /*min-width: 160px;*/
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    padding: 12px 16px;
+    z-index: 1;
+    padding-bottom: 0;
+}
+
+.dropdown-content a {
+    margin-top: 5px;
+    display: flex;
+    width: 100%;
+    margin-bottom: 10px;
+    text-decoration: none !important;
+    border: none !important;
+}
+
+.dropdown-content img {
+    margin-right: 5px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.languages {
+    float: left;
+    width: 100%;
+    justify-items: center;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+}
+
+#languages {
+    border-radius: 0;
+    margin: 0;
+    padding: 0;
+    height: 25px;
+    outline: none;
+}
+
+.password-reset-link {
+    font-size: 12px;
+    width: 100%;
+}
+
+.dropdown .lang-select {
+    color: #fff;
+    background: #5a6268;
+    font-size: 11px;
+    outline: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    border: 1px solid rgba(255, 251, 255, 0.25);
+    border-radius: 0;
+    margin: 0;
+    padding: 0;
+    height: 20px;
+}
+
+.dropdown .lang-select option:hover {
+    cursor: pointer;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.custom-suit-tab .paginator {
+    color: #666;
+    border-bottom: 1px solid #eee;
+    background: #fff;
+    overflow: hidden;
+    font-size: 13px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    line-height: 22px;
+    margin: 0;
+    border-top: 1px solid #ddd;
+    font-family: "Roboto", "Lucida Grande", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif;
+}
+
+.custom-suit-tab .paginator span {
+    margin-left: -7px;
+}
+
+.custom-suit-tab .paginator .this-page {
+    padding: 2px 6px;
+    font-weight: bold;
+    vertical-align: top;
+    margin-left: 0;
+    background: #79aec8;
+    color: white;
+    font-size: 14px;
+}
+
+.custom-suit-tab .paginator .this-page.padding-right {
+    margin-right: 6px;
+}
+
+.custom-suit-tab .paginator a {
+    padding: 2px 6px;
+    background: #79aec8;
+    text-decoration: none;
+    color: #fff;
+    font-size: 13px;
+}
+
+.custom-suit-tab .paginator .end {
+    margin-right: 6px;
+}
+
+.custom-suit-tab .paginator a.showall {
+    border: none;
+    background: none;
+    color: #5b80b2;
+}
+
+.custom--tabular{
+    overflow-x: scroll;
+}
+
+.generateBtn{
+    margin-left: 10px;
+    background: #79aec8;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+}
+
+label.required, th.required{
+    font-weight: normal;
+    color: #666;
+}
+.form-row label.Required:not(.vCheckboxLabel):after, .form-row label.required:not(.vCheckboxLabel):after, th.required::after {
+    content: '(*)';
+    color: red;
+    height: 22px;
+    font-weight: normal;
+
+}
+
+@media (max-width: 767px) {
+    label.required, th.required{
+        display: inline-flex;
+    }
+}
+
+.afilters .edit-link{
+    margin-left: 5px;
+}
+
+.postal_code_field__block{
+    float: left;
+    display: flex;
+    align-items: center;
+}
+
+.postal_code_field__block .related-widget-wrapper-link{
+    display:none;
+}
+
+.label-postal-code{
+    margin-left: 10px;
+}
+
+.label-postal-code.error {
+    color: red;
+    display: block;
+    -webkit-transition: width 2s; /* For Safari 3.1 to 6.0 */
+    transition: width 2s;
+}
+
+.js-inline-admin-formset.inline-group table th.column-license_key{
+    min-width: 90px;
+}
+.js-inline-admin-formset.inline-group table th.column-license_expiration{
+    min-width: 200px;
+}
+.js-inline-admin-formset.inline-group table th.column-product{
+    min-width: 115px;
+}
+.js-inline-admin-formset.inline-group table th.column-get_options{
+    min-width: 120px;
+}
+.js-inline-admin-formset.inline-group table th.column-activate_expiration{
+    min-width: 200px;
+}
+.js-inline-admin-formset.inline-group table th.column-start_app_num{
+    min-width: 130px;
+}
+.js-inline-admin-formset.inline-group table th.column-details{
+    min-width: 65px;
+}
+.js-inline-admin-formset.inline-group table thead tr th:last-child{
+    min-width: 75px;
+}
+.js-inline-admin-formset.inline-group table .field-activation_pass .vTextField{
+    max-width: 150px;
+}
+th.column-get_profile_first_name_kanji, td.field-get_profile_first_name_kanji{
+    min-width: 60px;
+    text-align: center;
+}
+th.column-get_profile_last_name_kanji, td.field-get_profile_last_name_kanji{
+    min-width: 60px;
+    text-align: center;
+}
+th.column-get_profile_compamy{
+    min-width: 170px;
+    text-align: center;
+}
+th.column-get_profile_company_furi{
+    min-width: 170px;
+    text-align: center;
+}
+th.column-get_profile_address_kanji{
+    min-width: 280px;
+    text-align: center;
+}
+th.column-get_profile_address_furi{
+    min-width: 300px;
+    text-align: center;
+}
+th.column-get_profile_department_kanji{
+    min-width: 100px;
+    text-align: center;
+}
+th.column-get_profile_manager{
+    min-width: 100px;
+    text-align: center;
+}
+th.column-activate_key{
+    min-width: 100px;
+    text-align: center;
+}
+th.column-activate_date_time{
+    min-width: 200px;
+    text-align: center;
+}
+th.column-user{
+    min-width: 170px;
+    text-align: center;
+}
+th.column-pc_name{
+    min-width:  80px;
+    text-align: center;
+}
+th.column-get_user_profile_full_name_kanji, td.field-get_user_profile_full_name_kanji{
+    min-width: 90px;
+}
+th.column-get_options{
+    min-width: 120px;
+}
+
+th.column-get_product{
+    min-width: 140px;
+}
+th.column-windows_product_id {
+    min-width: 150px;
+}
+th.column-mac_address{
+    min-width: 100px;
+}
+th.column-drive_serial_number{
+    min-width: 140px;
+}
+th.column-activate_status_code{
+    min-width: 150px;
+}
+th.column-get_full_name{
+    min-width: 100px;
+}
+th.column-status_last_update, th.column-start_app_datetime{
+    min-width: 200px;
+}
+th.column-app_exe_status_key{
+    min-width: 140px;
+}
+th.column-exe_status_expiration{
+    min-width: 150px;
+}
+th.column-activation_pass{
+    min-width: 185px;
+}
+th.column-get_user{
+    min-width: 90px;
+}
+th.column-get_activate_key{
+    min-width: 100px;
+}
+
+th.column-get_app_exe_status_key{
+    min-width: 120px;
+}
+
+th.column-get_license{
+    min-width: 85px;
+}
+
+th.column-get_product_key{
+    min-width: 85px;
+}
+
+.active#id_groups_add_link:hover{
+    background-position: 0 -112px;
+}
+.form-row .fieldBox .readonly {
+    width: 20em;
+}
+#id_email{
+    width: 22em;
+}
+th.column-status_code{
+    min-width: 120px;
+}
+thead th, tfoot td{
+    color: #666!important;
+    font-weight: 600!important;
+}
+.username_by_licenseId{
+    margin-bottom: 10px
+}
+.custom--tabular table thead th{
+    line-height: 16px;
+}
+#licenseId_by_activationId{
+    padding-top: 10px;
+}
+th.column-option_names{
+    min-width: 140px;
+}
+
+.aligned label{
+    width: 170px;
+}

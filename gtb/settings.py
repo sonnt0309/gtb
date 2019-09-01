@@ -49,7 +49,7 @@ INSTALLED_APPS = [
     'oscar.apps.checkout',
     'oscar.apps.address',
     'oscar.apps.shipping',
-    'oscar.apps.catalogue',
+    'apps.custom_oscar.catalogue.apps.CatalogueConfig',
     'oscar.apps.catalogue.reviews',
     'oscar.apps.partner',
     'oscar.apps.basket',
@@ -114,6 +114,7 @@ INSTALLED_APPS = [
     'gtb',
     'apps.admin.user',
     'apps.admin.postal_code',
+    'apps.admin.option',
 ]
 
 AUTH_USER_MODEL = 'user.User'

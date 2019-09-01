@@ -1,0 +1,30 @@
+{% extends "admin/base.html" %}
+
+{% load i18n %}
+
+{% block title %}GTB | {{ title }}{% endblock %}
+
+{% block extrastyle %}
+
+{% load static from staticfiles %}
+<style>
+    #header {
+        background-color: #5a6268;
+    }
+</style>
+{% endblock %}
+
+
+{% block extrahead %}
+    <link rel="shortcut icon" href="{% static 'admin/img/Gtb_Logo.png' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'admin/css/style.css' %}" />
+    <script src="{% static 'admin/js/jquery/jquery.min.js' %}"></script>
+{% endblock %}
+
+{% block branding %}
+<h1 id="site-name"><a href="{% url 'admin:index' %}"><img src="{% static 'admin/img/Gtb_Logo.png' %}" width="30px" height="30px">{% trans 'GTB Administration' %}</a></h1>
+{% endblock %}
+
+
+
+{% block nav-global %}{% endblock %}
