@@ -126,6 +126,15 @@ INSTALLED_APPS = [
 
 AUTH_USER_MODEL = 'user.User'
 
+ADMIN_REORDER = (
+    # Reorder app models
+    {'app': 'user', 'label': _('USER INFORMATION'), 'models': ('user.User',)},
+    {'app': 'license', 'label': _('LICENSE INFORMATION'), 'models': ('license.License',)},
+    {'app': 'activation', 'label': _('ACTIVATION INFORMATION'), 'models': ('activation.Activation',)},
+    {'app': 'execution_status', 'label': _('EXECUTION STATUS INFORMATION'), 'models': ('execution_status.ExecutionStatus',)},
+    {'app': 'user', 'label': _('DB TABLE MANAGEMENT'), 'models': ('catalogue.Product', 'operation_setting.OperationSetting', 'option.Option', 'auth.Group', 'postal_code.PostalCode')}
+)
+
 LIST_PER_PAGE = 20
 LIST_PER_PAGE_INLINE = 10
 
@@ -146,6 +155,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # admin reorder
+    'admin_reorder.middleware.ModelAdminReorder',
     # locale
     'django.middleware.locale.LocaleMiddleware',
     # oscar
