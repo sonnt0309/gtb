@@ -115,6 +115,7 @@ INSTALLED_APPS = [
     # admin
     'gtb',
     'apps.admin.user',
+    'apps.admin.group',
     'apps.admin.postal_code',
     'apps.admin.option',
     'apps.admin.license',
