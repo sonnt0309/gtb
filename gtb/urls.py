@@ -46,4 +46,6 @@ urlpatterns += [
     # api
     path('postal_code/', include('apps.admin.postal_code.urls')),
     path('execution_status/', include('apps.admin.execution_status.urls')),
+    path('activations/', include('apps.admin.activation.urls')),
+    path('api/key/', include('apps.admin.api_key.urls')),
 ]

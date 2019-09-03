@@ -111,6 +111,7 @@ INSTALLED_APPS = [
     'advanced_filters',
     'suit',
     'admin_reorder',
+    'corsheaders',
 
     # admin
     'gtb',
@@ -122,6 +123,7 @@ INSTALLED_APPS = [
     'apps.admin.activation',
     'apps.admin.execution_status',
     'apps.admin.operation_setting',
+    'apps.admin.api_key',
 ]
 
 AUTH_USER_MODEL = 'user.User'
@@ -132,7 +134,7 @@ ADMIN_REORDER = (
     {'app': 'license', 'label': _('LICENSE INFORMATION'), 'models': ('license.License',)},
     {'app': 'activation', 'label': _('ACTIVATION INFORMATION'), 'models': ('activation.Activation',)},
     {'app': 'execution_status', 'label': _('EXECUTION STATUS INFORMATION'), 'models': ('execution_status.ExecutionStatus',)},
-    {'app': 'user', 'label': _('DB TABLE MANAGEMENT'), 'models': ('catalogue.Product', 'operation_setting.OperationSetting', 'option.Option', 'auth.Group', 'postal_code.PostalCode')}
+    {'app': 'user', 'label': _('DB TABLE MANAGEMENT'), 'models': ('catalogue.Product', 'operation_setting.OperationSetting', 'option.Option', 'auth.Group', 'postal_code.PostalCode', 'api_key.ApiKey')}
 )
 
 LIST_PER_PAGE = 20
@@ -146,6 +148,9 @@ WAGTAIL_ENABLE_UPDATE_CHECK = False
 OSCAR_SHOP_NAME = 'GTB'
 OSCAR_SHOP_TAGLINE = 'Shop'
 OSCAR_PRODUCTS_PER_PAGE = 2
+
+# CROS DOMAIN
+CORS_ORIGIN_ALLOW_ALL = True
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -165,6 +170,8 @@ MIDDLEWARE = [
     # wagtail
     'wagtail.core.middleware.SiteMiddleware',
     'wagtail.contrib.redirects.middleware.RedirectMiddleware',
+    # corsheaders
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'gtb.urls'
