@@ -29,7 +29,7 @@ html5lib==1.0.1
 idna==2.8
 mysqlclient==1.4.2
 phonenumbers==8.10.17
-Pillow==5.4.1
+Pillow==6.2.0
 purl==1.5
 pycountry==19.7.15
 pycparser==2.19
